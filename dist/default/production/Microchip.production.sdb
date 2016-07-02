@@ -1,0 +1,405 @@
+[p LITE_MODE AUTOSTATIC PIC14 PIC14E ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F18313 ]
+[d frameptr 6 ]
+"23 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip/PINGDriver.h
+[e E4827 . `uc
+Ready 0
+Counting 1
+Done 2
+Error 3
+]
+[e E4847 . `uc
+Ready 0
+Counting 1
+Done 2
+Error 3
+]
+[e E4847 . `uc
+Ready 0
+Counting 1
+Done 2
+Error 3
+]
+"119 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip\mcc_generated_files/i2c1.c
+[e E4828 . `uc
+I2C1_SLAVE_WRITE_REQUEST 0
+I2C1_SLAVE_READ_REQUEST 1
+I2C1_SLAVE_WRITE_COMPLETED 2
+I2C1_SLAVE_READ_COMPLETED 3
+]
+"184
+[e E4839 . `uc
+SLAVE_NORMAL_DATA 0
+SLAVE_DATA_ADDRESS 1
+]
+"23 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip/PINGDriver.h
+[e E4847 . `uc
+Ready 0
+Counting 1
+Done 2
+Error 3
+]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.37\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"49 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip\main.c
+[v _resetTimer resetTimer `(v  1 e 1 0 ]
+"58
+[v _main main `(v  1 e 1 0 ]
+"81 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip\mcc_generated_files/i2c1.c
+[v _I2C1_Initialize I2C1_Initialize `(v  1 e 1 0 ]
+"104
+[v _I2C1_ISR I2C1_ISR `(v  1 e 1 0 ]
+"168
+[v _I2C1_StatusCallback I2C1_StatusCallback `(v  1 e 1 0 ]
+"51 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+"76 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"85
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"50 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"62 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip\mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+"100
+[v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
+"106
+[v _TMR1_StopTimer TMR1_StopTimer `(v  1 e 1 0 ]
+"112
+[v _TMR1_ReadTimer TMR1_ReadTimer `(ui  1 e 2 0 ]
+"121
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+"161
+[v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
+"179
+[v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
+"183
+[v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
+"194
+[v _TMR1_GATE_ISR TMR1_GATE_ISR `(v  1 e 1 0 ]
+[s S505 . 1 `uc 1 INTEDG 1 0 :1:0 
+`uc 1 . 1 0 :5:1 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"350 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic16f18313.h
+[u S510 . 1 `S505 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES510  1 e 1 @11 ]
+"369
+[v _PORTA PORTA `VEuc  1 e 1 @12 ]
+[s S29 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 BCL1IF 1 0 :1:2 
+`uc 1 SSP1IF 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 ADIF 1 0 :1:6 
+`uc 1 TMR1GIF 1 0 :1:7 
+]
+"467
+[u S38 . 1 `S29 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES38  1 e 1 @17 ]
+"897
+[v _TMR1L TMR1L `VEuc  1 e 1 @25 ]
+"916
+[v _TMR1H TMR1H `VEuc  1 e 1 @26 ]
+"935
+[v _T1CON T1CON `VEuc  1 e 1 @27 ]
+[s S84 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 T1SYNC 1 0 :1:2 
+`uc 1 T1SOSC 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+`uc 1 TMR1CS 1 0 :2:6 
+]
+"957
+[s S91 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+`uc 1 TMR1CS0 1 0 :1:6 
+`uc 1 TMR1CS1 1 0 :1:7 
+]
+[u S97 . 1 `S84 1 . 1 0 `S91 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES97  1 e 1 @27 ]
+"1006
+[v _T1GCON T1GCON `VEuc  1 e 1 @28 ]
+"1183
+[v _TRISA TRISA `VEuc  1 e 1 @140 ]
+[s S50 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 BCL1IE 1 0 :1:2 
+`uc 1 SSP1IE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+`uc 1 TMR1GIE 1 0 :1:7 
+]
+"1276
+[u S59 . 1 `S50 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES59  1 e 1 @145 ]
+"1725
+[v _LATA LATA `VEuc  1 e 1 @268 ]
+"2121
+[v _ANSELA ANSELA `VEuc  1 e 1 @396 ]
+"3022
+[v _WPUA WPUA `VEuc  1 e 1 @524 ]
+"3071
+[v _SSP1BUF SSP1BUF `VEuc  1 e 1 @529 ]
+"3324
+[v _SSP1ADD SSP1ADD `VEuc  1 e 1 @530 ]
+"3577
+[v _SSP1MSK SSP1MSK `VEuc  1 e 1 @531 ]
+"3830
+[v _SSP1STAT SSP1STAT `VEuc  1 e 1 @532 ]
+[s S384 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+"3852
+[u S393 . 1 `S384 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES393  1 e 1 @532 ]
+"3951
+[v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @533 ]
+[s S436 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"3984
+[s S442 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[u S447 . 1 `S436 1 . 1 0 `S442 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES447  1 e 1 @533 ]
+"4220
+[v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @534 ]
+[s S405 . 1 `uc 1 SEN 1 0 :1:0 
+`uc 1 RSEN 1 0 :1:1 
+`uc 1 PEN 1 0 :1:2 
+`uc 1 RCEN 1 0 :1:3 
+`uc 1 ACKEN 1 0 :1:4 
+`uc 1 ACKDT 1 0 :1:5 
+`uc 1 ACKSTAT 1 0 :1:6 
+`uc 1 GCEN 1 0 :1:7 
+]
+"4242
+[u S414 . 1 `S405 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES414  1 e 1 @534 ]
+"4341
+[v _SSP1CON3 SSP1CON3 `VEuc  1 e 1 @535 ]
+"7389
+[v _OSCCON1 OSCCON1 `VEuc  1 e 1 @2329 ]
+"7527
+[v _OSCCON3 OSCCON3 `VEuc  1 e 1 @2331 ]
+"7622
+[v _OSCEN OSCEN `VEuc  1 e 1 @2333 ]
+"7667
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @2334 ]
+"7724
+[v _OSCFRQ OSCFRQ `VEuc  1 e 1 @2335 ]
+"7769
+[v _PPSLOCK PPSLOCK `VEuc  1 e 1 @3599 ]
+[s S238 . 1 `uc 1 PPSLOCKED 1 0 :1:0 
+]
+"7779
+[u S240 . 1 `S238 1 . 1 0 ]
+[v _PPSLOCKbits PPSLOCKbits `VES240  1 e 1 @3599 ]
+[s S305 . 1 `uc 1 T1GPPS 1 0 :5:0 
+]
+"7958
+[s S307 . 1 `uc 1 T1GPPS0 1 0 :1:0 
+`uc 1 T1GPPS1 1 0 :1:1 
+`uc 1 T1GPPS2 1 0 :1:2 
+`uc 1 T1GPPS3 1 0 :1:3 
+`uc 1 T1GPPS4 1 0 :1:4 
+]
+[u S313 . 1 `S305 1 . 1 0 `S307 1 . 1 0 ]
+[v _T1GPPSbits T1GPPSbits `VES313  1 e 1 @3603 ]
+[s S265 . 1 `uc 1 SSP1CLKPPS 1 0 :5:0 
+]
+"8315
+[s S267 . 1 `uc 1 SSP1CLKPPS0 1 0 :1:0 
+`uc 1 SSP1CLKPPS1 1 0 :1:1 
+`uc 1 SSP1CLKPPS2 1 0 :1:2 
+`uc 1 SSP1CLKPPS3 1 0 :1:3 
+`uc 1 SSP1CLKPPS4 1 0 :1:4 
+]
+[u S273 . 1 `S265 1 . 1 0 `S267 1 . 1 0 ]
+[v _SSP1CLKPPSbits SSP1CLKPPSbits `VES273  1 e 1 @3616 ]
+[s S285 . 1 `uc 1 SSP1DATPPS 1 0 :5:0 
+]
+"8366
+[s S287 . 1 `uc 1 SSP1DATPPS0 1 0 :1:0 
+`uc 1 SSP1DATPPS1 1 0 :1:1 
+`uc 1 SSP1DATPPS2 1 0 :1:2 
+`uc 1 SSP1DATPPS3 1 0 :1:3 
+`uc 1 SSP1DATPPS4 1 0 :1:4 
+]
+[u S293 . 1 `S285 1 . 1 0 `S287 1 . 1 0 ]
+[v _SSP1DATPPSbits SSP1DATPPSbits `VES293  1 e 1 @3617 ]
+[s S245 . 1 `uc 1 RA1PPS 1 0 :5:0 
+]
+"8825
+[s S247 . 1 `uc 1 RA1PPS0 1 0 :1:0 
+`uc 1 RA1PPS1 1 0 :1:1 
+`uc 1 RA1PPS2 1 0 :1:2 
+`uc 1 RA1PPS3 1 0 :1:3 
+`uc 1 RA1PPS4 1 0 :1:4 
+]
+[u S253 . 1 `S245 1 . 1 0 `S247 1 . 1 0 ]
+[v _RA1PPSbits RA1PPSbits `VES253  1 e 1 @3729 ]
+[s S325 . 1 `uc 1 RA2PPS 1 0 :5:0 
+]
+"8876
+[s S327 . 1 `uc 1 RA2PPS0 1 0 :1:0 
+`uc 1 RA2PPS1 1 0 :1:1 
+`uc 1 RA2PPS2 1 0 :1:2 
+`uc 1 RA2PPS3 1 0 :1:3 
+`uc 1 RA2PPS4 1 0 :1:4 
+]
+[u S333 . 1 `S325 1 . 1 0 `S327 1 . 1 0 ]
+[v _RA2PPSbits RA2PPSbits `VES333  1 e 1 @3730 ]
+"11830
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"16 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip/PINGDriver.h
+[v _timerCount timerCount `ui  1 e 2 0 ]
+"23
+[v _timerValueStatus timerValueStatus `E4827  1 e 1 0 ]
+"62 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip\mcc_generated_files/i2c1.c
+[v _I2C1_slaveWriteData I2C1_slaveWriteData `VEuc  1 e 1 0 ]
+"56 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip\mcc_generated_files/tmr1.c
+[v _timer1ReloadVal timer1ReloadVal `VEui  1 e 2 0 ]
+"404 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip\mcc_generated_files/tmr1.h
+[v _TMR1_InterruptHandler TMR1_InterruptHandler `*.37(v  1 e 2 0 ]
+"58 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"100
+[v main@i i `i  1 a 2 8 ]
+"62
+[v main@timerVal2 timerVal2 `i  1 a 2 5 ]
+"61
+[v main@timerVal1 timerVal1 `i  1 a 2 3 ]
+"60
+[v main@oldRA oldRA `uc  1 a 1 7 ]
+"106
+} 0
+"49
+[v _resetTimer resetTimer `(v  1 e 1 0 ]
+{
+"54
+} 0
+"121 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip\mcc_generated_files/tmr1.c
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+{
+[v TMR1_WriteTimer@timerVal timerVal `ui  1 p 2 0 ]
+"141
+} 0
+"106
+[v _TMR1_StopTimer TMR1_StopTimer `(v  1 e 1 0 ]
+{
+"110
+} 0
+"76 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"83
+} 0
+"62 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip\mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+{
+"98
+} 0
+"100
+[v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
+{
+"104
+} 0
+"179
+[v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37v  1 p 2 0 ]
+"181
+} 0
+"50 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"60
+[v PIN_MANAGER_Initialize@state state `uc  1 a 1 0 ]
+"78
+} 0
+"85 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"99
+} 0
+"81 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip\mcc_generated_files/i2c1.c
+[v _I2C1_Initialize I2C1_Initialize `(v  1 e 1 0 ]
+{
+"102
+} 0
+"51 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
+{
+"70
+} 0
+"161 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip\mcc_generated_files/tmr1.c
+[v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
+{
+"176
+} 0
+"183
+[v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"191
+} 0
+"194
+[v _TMR1_GATE_ISR TMR1_GATE_ISR `(v  1 e 1 0 ]
+{
+"208
+} 0
+"112
+[v _TMR1_ReadTimer TMR1_ReadTimer `(ui  1 e 2 0 ]
+{
+"114
+[v TMR1_ReadTimer@readVal readVal `ui  1 a 2 2 ]
+"119
+} 0
+"104 C:\Users\Shane\Documents\Electronics\CreekDepthSensor\Microchip\mcc_generated_files/i2c1.c
+[v _I2C1_ISR I2C1_ISR `(v  1 e 1 0 ]
+{
+"106
+[v I2C1_ISR@i2c_data i2c_data `uc  1 a 1 4 ]
+"144
+} 0
+"168
+[v _I2C1_StatusCallback I2C1_StatusCallback `(v  1 e 1 0 ]
+{
+[v I2C1_StatusCallback@i2c_bus_state i2c_bus_state `E4828  1 a 1 wreg ]
+[v I2C1_StatusCallback@i2c_bus_state i2c_bus_state `E4828  1 a 1 wreg ]
+"171
+[v I2C1_StatusCallback@EEPROM_Buffer EEPROM_Buffer `[128]uc  1 s 128 EEPROM_Buffer ]
+"183
+[v I2C1_StatusCallback@eepromAddress eepromAddress `uc  1 s 1 eepromAddress ]
+"184
+[v I2C1_StatusCallback@slaveWriteType slaveWriteType `uc  1 s 1 slaveWriteType ]
+"168
+[v I2C1_StatusCallback@i2c_bus_state i2c_bus_state `E4828  1 a 1 2 ]
+"232
+} 0
