@@ -43,8 +43,18 @@
     TERMS.
 */
 
-#include "mcc_generated_files/mcc.h"
+//#include "mcc_generated_files/mcc.h"
+#include "System.h"
+#include "interrupts.h"
 #include "PINGDriver.h"
+#include "timers.h"
+
+// Configuration bits
+#pragma config CONFIG1 = 0x904
+
+#pragma config CONFIG2 = 0x32E1
+#pragma config CONFIG3 = 0x2003
+#pragma config CONFIG4 = 0x0003
 
 void resetTimer(void)
 {
@@ -52,55 +62,58 @@ void resetTimer(void)
     TMR1_WriteTimer(0);
     TMR1_StartTimer();
 }
+
+void initialize(void)
+{
+    // See spreadsheet for all initializations and config bits
+    // "register_settings.xlsx"
+    OSCCON1 = 0x3;
+    OSCCON2 = 0x3;
+    OSCCON3 = 0x0;
+    OSCEN = 0x64;
+    OSCFRQ = 0x3;
+    INTCON = 0x0;   // Disable all interrupts
+    
+    // Set up the I/O
+    globalInterruptDisable();
+    PPSLOCK = 0x55;
+    PPSLOCK = 0xAA;
+    PPSLOCK = 0x00;   // Unlock PPS
+    
+    SSP1CLKPPS = 0x1;   // CLK on RA1
+    SSP1DATPPS = 0x2;   // MOSI on RA2
+    SSP1SSPPS = 0x0;    // SS on RA0
+    RA5PPS = 0x19;      // MISO on RA5
+    T1GPPS = 0x4;       // Timer1 Gate on RA4
+    
+    // Lock the PPS
+    PPSLOCK = 0x55;
+    PPSLOCK = 0xAA;
+    PPSLOCK = 0x1;
+    
+    globalInterruptEnable();
+    intializeTimers();
+    initializeInterrupts();    
+
+}
 /*
                          Main application
  */
 void main(void)
 {
-    char oldRA;    
-    int timerVal1;
-    int timerVal2;
-        
-    
     // initialize the device
-    SYSTEM_Initialize();
-
-    // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
-    // Use the following macros to:
-
-    // Enable the Global Interrupts
-    INTERRUPT_GlobalInterruptEnable();
-
-    // Enable the Peripheral Interrupts
-    INTERRUPT_PeripheralInterruptEnable();
-
-    // Disable the Global Interrupts
-    //INTERRUPT_GlobalInterruptDisable();
-
-    // Disable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptDisable();
-    
+    initialize();
+  
     resetTimer();
-    oldRA = PORTA;   
+    int val = 0;
     while(1)
     {
-        if (oldRA != PORTA)
+        for(int i = 0; i < 1; i++)
         {
-            if(PORTA&16) // Low to high transition
-            {
-                timerVal1=(TMR1H<<8) | TMR1L;
-            }
-            else // High to low
-            {
-                timerVal2=(TMR1H<<8) | TMR1L;
-                break;
-            }        
+            
         }
-        oldRA = PORTA;
-        for(int i = 0; i<2; i++)
-        {
-            // No-op for 2 cycles
-        }
+        val = SSP1BUF;
+        // Wait to be told what to do
     }
     TMR1_StopTimer();
 }
