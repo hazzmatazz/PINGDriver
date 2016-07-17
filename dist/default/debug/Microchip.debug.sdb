@@ -187,7 +187,7 @@ TimerError 3
 [v main@loopCount loopCount `i  1 a 2 17 ]
 "132
 [v main@val val `i  1 a 2 13 ]
-"177
+"179
 } 0
 "103
 [v _takeReading takeReading `(v  1 e 1 0 ]

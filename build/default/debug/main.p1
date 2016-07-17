@@ -5009,33 +5009,39 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _result `i ~T0 @X0 1 a ]
 [; ;main.c: 168: int result = storeWordForTransfer(summedTimerCount&0xFFFF);
 [e = _result ( _storeWordForTransfer (1 -> & _summedTimerCount -> -> 65535 `ui `ul `ui ]
-[; ;main.c: 170: summedTimerCount = 0x00000000;
+[; ;main.c: 169: result = storeWordForTransfer(minTimerCount);
+"169
+[e = _result ( _storeWordForTransfer (1 _minTimerCount ]
+[; ;main.c: 170: result = storeWordForTransfer(maxTimerCount);
 "170
-[e = _summedTimerCount -> -> -> 0 `i `l `ul ]
-[; ;main.c: 171: loopCount = 1<<1;
-"171
-[e = _loopCount << -> 1 `i -> 1 `i ]
-[; ;main.c: 172: minTimerCount = 0xFFFF;
+[e = _result ( _storeWordForTransfer (1 _maxTimerCount ]
+[; ;main.c: 172: summedTimerCount = 0x00000000;
 "172
-[e = _minTimerCount -> 65535 `ui ]
-[; ;main.c: 173: maxTimerCount = 0x0000;
+[e = _summedTimerCount -> -> -> 0 `i `l `ul ]
+[; ;main.c: 173: loopCount = 1<<1;
 "173
-[e = _maxTimerCount -> -> 0 `i `ui ]
+[e = _loopCount << -> 1 `i -> 1 `i ]
+[; ;main.c: 174: minTimerCount = 0xFFFF;
 "174
+[e = _minTimerCount -> 65535 `ui ]
+[; ;main.c: 175: maxTimerCount = 0x0000;
+"175
+[e = _maxTimerCount -> -> 0 `i `ui ]
+"176
 }
 [e :U 593 ]
-"175
+"177
 }
 [e :U 587 ]
 "143
 [e $U 588  ]
 [e :U 589 ]
-[; ;main.c: 174: }
-[; ;main.c: 175: }
-[; ;main.c: 176: TMR1_StopTimer();
-"176
-[e ( _TMR1_StopTimer ..  ]
+[; ;main.c: 176: }
 [; ;main.c: 177: }
-"177
+[; ;main.c: 178: TMR1_StopTimer();
+"178
+[e ( _TMR1_StopTimer ..  ]
+[; ;main.c: 179: }
+"179
 [e :UE 586 ]
 }

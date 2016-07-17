@@ -6411,6 +6411,8 @@ else
 
 summedTimerCount = summedTimerCount >> 1;
 int result = storeWordForTransfer(summedTimerCount&0xFFFF);
+result = storeWordForTransfer(minTimerCount);
+result = storeWordForTransfer(maxTimerCount);
 
 summedTimerCount = 0x00000000;
 loopCount = 1<<1;

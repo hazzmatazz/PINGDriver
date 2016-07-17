@@ -166,6 +166,10 @@ void main(void)
             // This allows me to take the average pretty easily.
             summedTimerCount = summedTimerCount >> READINGDIVIDER;
             int result = storeWordForTransfer(summedTimerCount&0xFFFF);
+            result = storeWordForTransfer(minTimerCount);
+            result = storeWordForTransfer(maxTimerCount);
+            // Result is just for debugging for now.
+            
             // Reset things
             summedTimerCount = 0x00000000;
             loopCount = MAXREADINGCOUNT;
