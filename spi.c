@@ -31,6 +31,8 @@ void spiInterrupt(void)
     {
         // We transmitted out the last data point
         PINGDriverStatus.bufferEmpty = 1;
+        // Store the ID (?)
+        SSP1BUF = 0x12;
     }
     else
     {
