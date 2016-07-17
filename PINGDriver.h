@@ -13,7 +13,19 @@ extern "C" {
 #endif
 
     
-uint16_t timerCount;
+unsigned long summedTimerCount;
+unsigned int minTimerCount;
+unsigned int maxTimerCount;
+
+struct {
+    unsigned int bufferEmpty : 1;
+    unsigned int takingReading : 1;
+} PINGDriverStatus;
+
+// READINGDIVIDER should be 2^count
+// Makes it easy to sum up then divide down
+#define READINGDIVIDER 1
+#define MAXREADINGCOUNT 1<<READINGDIVIDER
 
 typedef enum 
 {

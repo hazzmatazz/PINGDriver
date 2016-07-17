@@ -50,7 +50,7 @@
 #pragma config RSTOSC = HFINT1    // Power-up default value for COSC bits->HFINTOSC
 #pragma config CLKOUTEN = OFF    // Clock Out Enable bit->CLKOUT function is disabled; I/O or oscillator function on OSC2
 #pragma config CSWEN = ON    // Clock Switch Enable bit->Writing to NOSC and NDIV is allowed
-#pragma config FCMEN = ON    // Fail-Safe Clock Monitor Enable->Fail-Safe Clock Monitor is enabled
+#pragma config FCMEN = OFF    // Fail-Safe Clock Monitor Enable->Fail-Safe Clock Monitor is disabled
 
 // CONFIG2
 #pragma config MCLRE = ON    // Master Clear Enable bit->MCLR/VPP pin function is MCLR; Weak pull-up enabled 
@@ -59,7 +59,7 @@
 #pragma config LPBOREN = OFF    // Low-power BOR enable bit->ULPBOR disabled
 #pragma config BOREN = ON    // Brown-out Reset Enable bits->Brown-out Reset enabled, SBOREN bit ignored
 #pragma config BORV = LOW    // Brown-out Reset Voltage selection bit->Brown-out voltage (Vbor) set to 2.45V
-#pragma config PPS1WAY = ON    // PPSLOCK bit One-Way Set Enable bit->The PPSLOCK bit can be cleared and set only once; PPS registers remain locked after one clear/set cycle
+#pragma config PPS1WAY = OFF    // PPSLOCK bit One-Way Set Enable bit->The PPSLOCK bit can be set and cleared repeatedly (subject to the unlock sequence)
 #pragma config STVREN = ON    // Stack Overflow/Underflow Reset Enable bit->Stack Overflow or Underflow will cause a Reset
 #pragma config DEBUG = OFF    // Debugger enable bit->Background debugger disabled
 
@@ -78,7 +78,7 @@ void SYSTEM_Initialize(void)
     
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
-    I2C1_Initialize();
+    SPI1_Initialize();
     TMR1_Initialize();
 }
 
@@ -90,8 +90,8 @@ void OSCILLATOR_Initialize(void)
     OSCCON3 = 0x00;
     // LFOEN disabled; ADOEN disabled; SOSCEN disabled; EXTOEN disabled; HFOEN disabled; 
     OSCEN = 0x00;
-    // HFFRQ 8_MHz; 
-    OSCFRQ = 0x04;
+    // HFFRQ 4_MHz; 
+    OSCFRQ = 0x03;
     // HFTUN 0; 
     OSCTUNE = 0x00;
     // Set the secondary oscillator

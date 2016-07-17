@@ -49,10 +49,10 @@
 
 void PIN_MANAGER_Initialize(void)
 {
-    LATA = 0x0;
-    WPUA = 0x0;
-    TRISA = 0x37;
-    ANSELA = 0x21;
+    LATA = 0x1;
+    WPUA = 0x8;
+    TRISA = 0x17;
+    ANSELA = 0x20;
 
     
 
@@ -63,11 +63,11 @@ void PIN_MANAGER_Initialize(void)
     PPSLOCK = 0xAA;
     PPSLOCKbits.PPSLOCKED = 0x00; // unlock PPS
 
-    RA1PPSbits.RA1PPS = 0x18;   //RA1->MSSP1:SCL1;
-    SSP1CLKPPSbits.SSP1CLKPPS = 0x01;   //RA1->MSSP1:SCL1;
-    SSP1DATPPSbits.SSP1DATPPS = 0x02;   //RA2->MSSP1:SDA1;
+    SSP1CLKPPSbits.SSP1CLKPPS = 0x01;   //RA1->MSSP1:SCK1;
+    SSP1DATPPSbits.SSP1DATPPS = 0x02;   //RA2->MSSP1:SDI1;
     T1GPPSbits.T1GPPS = 0x04;   //RA4->TMR1:T1G;
-    RA2PPSbits.RA2PPS = 0x19;   //RA2->MSSP1:SDA1;
+    SSP1SSPPSbits.SSP1SSPPS = 0x00;   //RA0->MSSP1:SS1;
+    RA5PPSbits.RA5PPS = 0x19;   //RA5->MSSP1:SDO1;
 
     PPSLOCK = 0x55;
     PPSLOCK = 0xAA;
@@ -77,11 +77,10 @@ void PIN_MANAGER_Initialize(void)
 
 }
 
-/*
+
 void PIN_MANAGER_IOC(void)
-{    
-}
-*/
+{  
+    }
 
 /**
  End of File

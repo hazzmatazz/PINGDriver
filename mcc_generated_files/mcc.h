@@ -50,10 +50,10 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "interrupt_manager.h"
-#include "i2c1.h"
+#include "spi1.h"
 #include "tmr1.h"
 
-#define _XTAL_FREQ  2000000
+#define _XTAL_FREQ  1000000
 
 /**
  * @Param

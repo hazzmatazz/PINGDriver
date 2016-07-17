@@ -53,7 +53,7 @@ void interrupt INTERRUPT_InterruptManager (void)
    // interrupt handler
     if(PIE1bits.SSP1IE == 1 && PIR1bits.SSP1IF == 1)
     {
-        I2C1_ISR();
+        SPI_ISR();
     }
     else if(PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF == 1)
     {
@@ -67,12 +67,6 @@ void interrupt INTERRUPT_InterruptManager (void)
     {
         //Unhandled Interrupt
     }
-}
-
-void resetTimerInterrupts(void)
-{
-    PIE1bits.TMR1GIE = 1;
-    PIE1bits.TMR1IE = 1;
 }
 /**
  End of File

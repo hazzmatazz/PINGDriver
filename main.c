@@ -48,33 +48,34 @@
 #include "interrupts.h"
 #include "PINGDriver.h"
 #include "timers.h"
+#include "spi.h"
 
 // Configuration bits
 #pragma config CONFIG1 = 0x904
-
 #pragma config CONFIG2 = 0x32E1
 #pragma config CONFIG3 = 0x2003
 #pragma config CONFIG4 = 0x0003
-
-void resetTimer(void)
-{
-    TMR1_StopTimer();    
-    TMR1_WriteTimer(0);
-    TMR1_StartTimer();
-}
 
 void initialize(void)
 {
     // See spreadsheet for all initializations and config bits
     // "register_settings.xlsx"
-    OSCCON1 = 0x3;
-    OSCCON2 = 0x3;
+    OSCFRQ = 0x6;
+    OSCCON1 = 0x0;
+    OSCCON2 = 0x0;
     OSCCON3 = 0x0;
     OSCEN = 0x64;
-    OSCFRQ = 0x3;
     INTCON = 0x0;   // Disable all interrupts
     
-    // Set up the I/O
+    // Set up the pin directions/types
+    TRISA = 0x1F;
+    ANSELA = 0x00;
+    WPUA = 0x00;
+    ODCONA = 0x00;
+    SLRCONA = 0x00;
+    INLVLA = 0x00;
+    
+    // Set up the peripherals
     globalInterruptDisable();
     PPSLOCK = 0x55;
     PPSLOCK = 0xAA;
@@ -94,7 +95,30 @@ void initialize(void)
     globalInterruptEnable();
     intializeTimers();
     initializeInterrupts();    
+    initializeSpi();
+    
 
+}
+
+void takeReading(void)
+{
+    // Prevent interrupts
+    globalInterruptDisable();
+    // Drive the Timer Pin high, then low, then tri-state   
+    RA4 = 0;    // Clear RA4
+    TRISA4 = 0;  // Enable RA4 to be an output
+    RA4 = 1;    // Set RA4
+    // Instruction clock is 4 MHz. Need to keep this true for 5us
+    // Loop below to put a delay in
+    for (int i=0; i<1; i++)
+    {
+        // Just wait
+    }
+    RA4 = 0;                            // Clear RA4 ()
+    TRISA4 = 1;                         // Return to an input state
+    resetTimer();                       // Clear the timer, enable interrupts, and start it.
+    PINGDriverStatus.takingReading = 1; // Say that we're taking a reading.
+    
 }
 /*
                          Main application
@@ -106,14 +130,48 @@ void main(void)
   
     resetTimer();
     int val = 0;
+    // Clear the buffer valid (forces a reading to be taken at the beginning of the loop)
+    PINGDriverStatus.bufferEmpty = 1;
+    PINGDriverStatus.takingReading = 0;
+    
+    summedTimerCount = 0x00000000;
+    int loopCount = MAXREADINGCOUNT;
+    
+    minTimerCount = 0xFFFF;
+    maxTimerCount = 0x0000;
+    
     while(1)
     {
-        for(int i = 0; i < 1; i++)
+        if (PINGDriverStatus.bufferEmpty == 0)
         {
-            
+            continue; // Just wait            
         }
-        val = SSP1BUF;
-        // Wait to be told what to do
+        
+        if (PINGDriverStatus.takingReading)
+        {
+            // Just wait
+            continue;
+        }
+        
+        // We aren't taking a reading and the buffer is empty        
+        // If the loop count is terminal, then process the data and send it out. Otherwise, take a reading        
+        if (loopCount > 0)
+        {
+            takeReading();
+            loopCount--;    // Decrement the loop count
+        }
+        else
+        {
+            // Process the data
+            // This allows me to take the average pretty easily.
+            summedTimerCount = summedTimerCount >> READINGDIVIDER;
+            int result = storeWordForTransfer(summedTimerCount&0xFFFF);
+            // Reset things
+            summedTimerCount = 0x00000000;
+            loopCount = MAXREADINGCOUNT;
+            minTimerCount = 0xFFFF;
+            maxTimerCount = 0x0000;
+        }
     }
     TMR1_StopTimer();
 }

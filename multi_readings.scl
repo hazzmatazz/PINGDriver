@@ -1,0 +1,30 @@
+// Magic file created by Dude
+configuration for "pic16f18313" is
+end configuration;
+
+testbench for "pic16f18313" is
+begin
+	//Pin/Register Actions
+	process is
+	begin
+			wait for 0 us;
+			report "Stimulus actions after 0 us";
+			RA1 <= '0';
+			RA0 <= '1';
+			RA2 <= '0';
+			RA4 <= '0';
+			wait for 892 us;
+			report "Stimulus actions after 892 us";
+			RA4 <= '1';
+			wait for 6997 us;
+			report "Stimulus actions after 7889 us";
+			RA4 <= '0';
+			wait for 784 us;
+			report "Stimulus actions after 8673 us";
+			RA4 <= '1';
+			wait for 7055 us;
+			report "Stimulus actions after 15728 us";
+			RA4 <= '0';
+		wait;
+	end process;
+end testbench;

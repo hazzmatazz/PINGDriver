@@ -1,31 +1,68 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"23 mcc_generated_files/../PINGDriver.h
-[c E4849 0 1 2 3 .. ]
-[n E4849 . TimerReady TimerCounting TimerDone TimerError  ]
-[v F4877 `(v ~T0 @X0 0 tf ]
-"161 mcc_generated_files/tmr1.h
-[v _TMR1_StopTimer `(v ~T0 @X0 0 ef ]
-"235
-[v _TMR1_WriteTimer `(v ~T0 @X0 0 ef1`ui ]
-"129
-[v _TMR1_StartTimer `(v ~T0 @X0 0 ef ]
+"20 PINGDriver.h
+[s S580 :1 `uc 1 :1 `uc 1 ]
+[n S580 . bufferEmpty takingReading ]
+"35
+[c E4848 0 1 2 3 .. ]
+[n E4848 . TimerReady TimerCounting TimerDone TimerError  ]
+[v F4868 `(v ~T0 @X0 0 tf ]
+"7724 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic16f18313.h
+[v _OSCFRQ `Vuc ~T0 @X0 0 e@2335 ]
+"7389
+[v _OSCCON1 `Vuc ~T0 @X0 0 e@2329 ]
+"7458
+[v _OSCCON2 `Vuc ~T0 @X0 0 e@2330 ]
+"7527
+[v _OSCCON3 `Vuc ~T0 @X0 0 e@2331 ]
+"7622
+[v _OSCEN `Vuc ~T0 @X0 0 e@2333 ]
+"337
+[v _INTCON `Vuc ~T0 @X0 0 e@11 ]
+"1183
+[v _TRISA `Vuc ~T0 @X0 0 e@140 ]
+"2121
+[v _ANSELA `Vuc ~T0 @X0 0 e@396 ]
+"3022
+[v _WPUA `Vuc ~T0 @X0 0 e@524 ]
+"4462
+[v _ODCONA `Vuc ~T0 @X0 0 e@652 ]
+"4826
+[v _SLRCONA `Vuc ~T0 @X0 0 e@780 ]
+"4870
+[v _INLVLA `Vuc ~T0 @X0 0 e@908 ]
+"17 interrupts.h
+[v _globalInterruptDisable `(v ~T0 @X0 0 ef ]
+"7769 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic16f18313.h
+[v _PPSLOCK `Vuc ~T0 @X0 0 e@3599 ]
+"8298
+[v _SSP1CLKPPS `Vuc ~T0 @X0 0 e@3616 ]
+"8349
+[v _SSP1DATPPS `Vuc ~T0 @X0 0 e@3617 ]
+"8400
+[v _SSP1SSPPS `Vuc ~T0 @X0 0 e@3618 ]
+"8961
+[v _RA5PPS `Vuc ~T0 @X0 0 e@3733 ]
+"7941
+[v _T1GPPS `Vuc ~T0 @X0 0 e@3603 ]
+"18 interrupts.h
+[v _globalInterruptEnable `(v ~T0 @X0 0 ef ]
+"15 timers.h
+[v _intializeTimers `(v ~T0 @X0 0 ef ]
+"15 interrupts.h
+[v _initializeInterrupts `(v ~T0 @X0 0 ef ]
+"15 spi.h
+[v _initializeSpi `(v ~T0 @X0 0 ef ]
+"12544 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic16f18313.h
+[v _RA4 `Vb ~T0 @X0 0 e@100 ]
+"12916
+[v _TRISA4 `Vb ~T0 @X0 0 e@1124 ]
+"21 timers.h
+[v _resetTimer `(v ~T0 @X0 0 ef ]
 [p mainexit ]
-"69 mcc_generated_files/mcc.h
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"343 C:\Program Files (x86)\Microchip\xc8\v1.37\include\pic16f18313.h
-[s S27 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S27 . INTEDG . PEIE GIE ]
-"342
-[u S26 `S27 1 ]
-[n S26 . . ]
-"350
-[v _INTCONbits `VS26 ~T0 @X0 0 e@11 ]
-"369
-[v _PORTA `Vuc ~T0 @X0 0 e@12 ]
-"916
-[v _TMR1H `Vuc ~T0 @X0 0 e@26 ]
-"897
-[v _TMR1L `Vuc ~T0 @X0 0 e@25 ]
+"18 spi.h
+[v _storeWordForTransfer `(i ~T0 @X0 0 ef1`ui ]
+"17 timers.h
+[v _TMR1_StopTimer `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -4622,8 +4659,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 186: extern unsigned char __resetbits;
 [; ;pic.h: 187: extern __bit __powerdown;
 [; ;pic.h: 188: extern __bit __timeout;
-[; ;pin_manager.h: 73: void PIN_MANAGER_Initialize (void);
-[; ;pin_manager.h: 85: void PIN_MANAGER_IOC(void);
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -4653,179 +4688,354 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;interrupt_manager.h: 110: void interrupt INTERRUPT_InterruptManager(void);
-[; ;interrupt_manager.h: 112: void resetTimerInterrupts(void);
-[; ;__size_t.h: 4: typedef unsigned size_t;
-[; ;stddef.h: 6: typedef int ptrdiff_t;
-[; ;i2c1.h: 78: typedef enum
-[; ;i2c1.h: 79: {
-[; ;i2c1.h: 80: I2C1_SLAVE_WRITE_REQUEST,
-[; ;i2c1.h: 81: I2C1_SLAVE_READ_REQUEST,
-[; ;i2c1.h: 82: I2C1_SLAVE_WRITE_COMPLETED,
-[; ;i2c1.h: 83: I2C1_SLAVE_READ_COMPLETED,
-[; ;i2c1.h: 84: } I2C1_SLAVE_DRIVER_STATUS;
-[; ;i2c1.h: 113: void I2C1_Initialize(void);
-[; ;i2c1.h: 133: void I2C1_ISR ( void );
-[; ;i2c1.h: 140: extern volatile uint8_t I2C1_slaveWriteData;
-"16 mcc_generated_files/../PINGDriver.h
-[v _timerCount `ui ~T0 @X0 1 e ]
-[; ;PINGDriver.h: 16: uint16_t timerCount;
-[; ;PINGDriver.h: 18: typedef enum
-[; ;PINGDriver.h: 19: {
-[; ;PINGDriver.h: 20: TimerReady, TimerCounting, TimerDone, TimerError
-[; ;PINGDriver.h: 21: } TimerStatus;
+[; ;interrupts.h: 15: void initializeInterrupts(void);
+[; ;interrupts.h: 16: void clearAllFlags(void);
+[; ;interrupts.h: 17: void globalInterruptDisable(void);
+[; ;interrupts.h: 18: void globalInterruptEnable(void);
+[; ;interrupts.h: 19: void peripheralInterruptDisable(void);
+[; ;interrupts.h: 20: void peripheralInterruptEnable(void);
+[; ;interrupts.h: 22: void interrupt interruptManager(void);
+"16 PINGDriver.h
+[v _summedTimerCount `ul ~T0 @X0 1 e ]
+[; ;PINGDriver.h: 16: unsigned long summedTimerCount;
+"17
+[v _minTimerCount `ui ~T0 @X0 1 e ]
+[; ;PINGDriver.h: 17: unsigned int minTimerCount;
+"18
+[v _maxTimerCount `ui ~T0 @X0 1 e ]
+[; ;PINGDriver.h: 18: unsigned int maxTimerCount;
 "23
-[v _timerValueStatus `E4849 ~T0 @X0 1 e ]
-[; ;PINGDriver.h: 23: TimerStatus timerValueStatus;
-[; ;tmr1.h: 100: void TMR1_Initialize(void);
-[; ;tmr1.h: 129: void TMR1_StartTimer(void);
-[; ;tmr1.h: 161: void TMR1_StopTimer(void);
-[; ;tmr1.h: 196: uint16_t TMR1_ReadTimer(void);
-[; ;tmr1.h: 235: void TMR1_WriteTimer(uint16_t timerVal);
-[; ;tmr1.h: 271: void TMR1_Reload(void);
-[; ;tmr1.h: 310: void TMR1_StartSinglePulseAcquisition(void);
-[; ;tmr1.h: 349: uint8_t TMR1_CheckGateValueStatus(void);
-[; ;tmr1.h: 367: void TMR1_ISR(void);
-[; ;tmr1.h: 386: void TMR1_SetInterruptHandler(void *InterruptHandler);
-"404 mcc_generated_files/tmr1.h
-[v _TMR1_InterruptHandler `*F4877 ~T0 @X0 1 e ]
-[; ;tmr1.h: 404: void (*TMR1_InterruptHandler)(void);
-[; ;tmr1.h: 422: void TMR1_DefaultInterruptHandler(void);
-[; ;tmr1.h: 444: void TMR1_GATE_ISR(void);
-[; ;mcc.h: 69: void SYSTEM_Initialize(void);
-[; ;mcc.h: 82: void OSCILLATOR_Initialize(void);
-"49 main.c
-[v _resetTimer `(v ~T0 @X0 1 ef ]
-"50
-{
-[; ;main.c: 49: void resetTimer(void)
-[; ;main.c: 50: {
-[e :U _resetTimer ]
-[f ]
-[; ;main.c: 51: TMR1_StopTimer();
-"51
-[e ( _TMR1_StopTimer ..  ]
-[; ;main.c: 52: TMR1_WriteTimer(0);
-"52
-[e ( _TMR1_WriteTimer (1 -> -> 0 `i `ui ]
-[; ;main.c: 53: TMR1_StartTimer();
-"53
-[e ( _TMR1_StartTimer ..  ]
-[; ;main.c: 54: }
-"54
-[e :UE 580 ]
-}
-"58
-[v _main `(v ~T0 @X0 1 ef ]
+[v _PINGDriverStatus `S580 ~T0 @X0 1 e ]
+[; ;PINGDriver.h: 20: struct {
+[; ;PINGDriver.h: 21: unsigned int bufferEmpty : 1;
+[; ;PINGDriver.h: 22: unsigned int takingReading : 1;
+[; ;PINGDriver.h: 23: } PINGDriverStatus;
+[; ;PINGDriver.h: 30: typedef enum
+[; ;PINGDriver.h: 31: {
+[; ;PINGDriver.h: 32: TimerReady, TimerCounting, TimerDone, TimerError
+[; ;PINGDriver.h: 33: } TimerStatus;
+"35
+[v _timerValueStatus `E4848 ~T0 @X0 1 e ]
+[; ;PINGDriver.h: 35: TimerStatus timerValueStatus;
+[; ;timers.h: 15: void intializeTimers(void);
+[; ;timers.h: 17: void TMR1_StopTimer(void);
+[; ;timers.h: 18: void TMR1_WriteTimer(int);
+[; ;timers.h: 19: void TMR1_StartTimer(void);
+[; ;timers.h: 21: void resetTimer(void);
+[; ;timers.h: 22: int timer1Value(void);
+"24 timers.h
+[v _TMR1_InterruptHandler `*F4868 ~T0 @X0 1 e ]
+[; ;timers.h: 24: void (*TMR1_InterruptHandler)(void);
+[; ;timers.h: 26: void timer1GateInterrupt(void);
+[; ;spi.h: 15: void initializeSpi(void);
+[; ;spi.h: 16: void spiInterrupt(void);
+[; ;spi.h: 17: void storeByteForTransfer(unsigned short);
+[; ;spi.h: 18: int storeWordForTransfer(unsigned int);
+"21 spi.h
+[v _bufferCount `s ~T0 @X0 1 e ]
+[; ;spi.h: 21: short bufferCount;
+"22
+[v _dataBuffer `us ~T0 @X0 -> 6 `i e ]
+[; ;spi.h: 22: unsigned short dataBuffer[6];
+"54 main.c
+[p x CLKOUTEN=OFF ]
+[p x RSTOSC=HFINT32 ]
+[p x CSWEN=ON ]
+[p x FEXTOSC=OFF ]
+[p x FCMEN=OFF ]
+"55
+[p x WDTE=OFF ]
+[p x PPS1WAY=OFF ]
+[p x LPBOREN=OFF ]
+[p x STVREN=ON ]
+[p x PWRTE=ON ]
+[p x BOREN=ON ]
+[p x BORV=LOW ]
+[p x DEBUG=OFF ]
+[p x MCLRE=ON ]
+"56
+[p x LVP=ON ]
+[p x WRT=OFF ]
+"57
+[p x CP=OFF ]
+[p x CPD=OFF ]
 "59
-{
-[; ;main.c: 58: void main(void)
-[; ;main.c: 59: {
-[e :U _main ]
-[f ]
+[v _initialize `(v ~T0 @X0 1 ef ]
 "60
-[v _oldRA `uc ~T0 @X0 1 a ]
-"61
-[v _timerVal1 `i ~T0 @X0 1 a ]
-"62
-[v _timerVal2 `i ~T0 @X0 1 a ]
-[; ;main.c: 60: char oldRA;
-[; ;main.c: 61: int timerVal1;
-[; ;main.c: 62: int timerVal2;
-[; ;main.c: 66: SYSTEM_Initialize();
+{
+[; ;main.c: 59: void initialize(void)
+[; ;main.c: 60: {
+[e :U _initialize ]
+[f ]
+[; ;main.c: 63: OSCFRQ = 0x6;
+"63
+[e = _OSCFRQ -> -> 6 `i `uc ]
+[; ;main.c: 64: OSCCON1 = 0x0;
+"64
+[e = _OSCCON1 -> -> 0 `i `uc ]
+[; ;main.c: 65: OSCCON2 = 0x0;
+"65
+[e = _OSCCON2 -> -> 0 `i `uc ]
+[; ;main.c: 66: OSCCON3 = 0x0;
 "66
-[e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 72: (INTCONbits.GIE = 1);
+[e = _OSCCON3 -> -> 0 `i `uc ]
+[; ;main.c: 67: OSCEN = 0x64;
+"67
+[e = _OSCEN -> -> 100 `i `uc ]
+[; ;main.c: 68: INTCON = 0x0;
+"68
+[e = _INTCON -> -> 0 `i `uc ]
+[; ;main.c: 71: TRISA = 0x1F;
+"71
+[e = _TRISA -> -> 31 `i `uc ]
+[; ;main.c: 72: ANSELA = 0x00;
 "72
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-[; ;main.c: 75: (INTCONbits.PEIE = 1);
+[e = _ANSELA -> -> 0 `i `uc ]
+[; ;main.c: 73: WPUA = 0x00;
+"73
+[e = _WPUA -> -> 0 `i `uc ]
+[; ;main.c: 74: ODCONA = 0x00;
+"74
+[e = _ODCONA -> -> 0 `i `uc ]
+[; ;main.c: 75: SLRCONA = 0x00;
 "75
-[e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-[; ;main.c: 83: resetTimer();
-"83
-[e ( _resetTimer ..  ]
-[; ;main.c: 84: oldRA = PORTA;
+[e = _SLRCONA -> -> 0 `i `uc ]
+[; ;main.c: 76: INLVLA = 0x00;
+"76
+[e = _INLVLA -> -> 0 `i `uc ]
+[; ;main.c: 79: globalInterruptDisable();
+"79
+[e ( _globalInterruptDisable ..  ]
+[; ;main.c: 80: PPSLOCK = 0x55;
+"80
+[e = _PPSLOCK -> -> 85 `i `uc ]
+[; ;main.c: 81: PPSLOCK = 0xAA;
+"81
+[e = _PPSLOCK -> -> 170 `i `uc ]
+[; ;main.c: 82: PPSLOCK = 0x00;
+"82
+[e = _PPSLOCK -> -> 0 `i `uc ]
+[; ;main.c: 84: SSP1CLKPPS = 0x1;
 "84
-[e = _oldRA _PORTA ]
-[; ;main.c: 85: while(1)
+[e = _SSP1CLKPPS -> -> 1 `i `uc ]
+[; ;main.c: 85: SSP1DATPPS = 0x2;
 "85
-[e :U 583 ]
-[; ;main.c: 86: {
+[e = _SSP1DATPPS -> -> 2 `i `uc ]
+[; ;main.c: 86: SSP1SSPPS = 0x0;
 "86
-{
-[; ;main.c: 87: if (oldRA != PORTA)
+[e = _SSP1SSPPS -> -> 0 `i `uc ]
+[; ;main.c: 87: RA5PPS = 0x19;
 "87
-[e $ ! != -> _oldRA `i -> _PORTA `i 585  ]
-[; ;main.c: 88: {
+[e = _RA5PPS -> -> 25 `i `uc ]
+[; ;main.c: 88: T1GPPS = 0x4;
 "88
-{
-[; ;main.c: 89: if(PORTA&16)
-"89
-[e $ ! != & -> _PORTA `i -> 16 `i -> 0 `i 586  ]
-[; ;main.c: 90: {
-"90
-{
-[; ;main.c: 91: timerVal1=(TMR1H<<8) | TMR1L;
+[e = _T1GPPS -> -> 4 `i `uc ]
+[; ;main.c: 91: PPSLOCK = 0x55;
 "91
-[e = _timerVal1 | << -> _TMR1H `i -> 8 `i -> _TMR1L `i ]
+[e = _PPSLOCK -> -> 85 `i `uc ]
+[; ;main.c: 92: PPSLOCK = 0xAA;
 "92
-}
-[; ;main.c: 92: }
-[e $U 587  ]
+[e = _PPSLOCK -> -> 170 `i `uc ]
+[; ;main.c: 93: PPSLOCK = 0x1;
 "93
-[e :U 586 ]
-[; ;main.c: 93: else
-[; ;main.c: 94: {
-"94
-{
-[; ;main.c: 95: timerVal2=(TMR1H<<8) | TMR1L;
+[e = _PPSLOCK -> -> 1 `i `uc ]
+[; ;main.c: 95: globalInterruptEnable();
 "95
-[e = _timerVal2 | << -> _TMR1H `i -> 8 `i -> _TMR1L `i ]
-[; ;main.c: 96: break;
+[e ( _globalInterruptEnable ..  ]
+[; ;main.c: 96: intializeTimers();
 "96
-[e $U 584  ]
+[e ( _intializeTimers ..  ]
+[; ;main.c: 97: initializeInterrupts();
 "97
-}
-[e :U 587 ]
+[e ( _initializeInterrupts ..  ]
+[; ;main.c: 98: initializeSpi();
 "98
+[e ( _initializeSpi ..  ]
+[; ;main.c: 101: }
+"101
+[e :UE 581 ]
 }
-[e :U 585 ]
-[; ;main.c: 97: }
-[; ;main.c: 98: }
-[; ;main.c: 99: oldRA = PORTA;
-"99
-[e = _oldRA _PORTA ]
-[; ;main.c: 100: for(int i = 0; i<2; i++)
-"100
+"103
+[v _takeReading `(v ~T0 @X0 1 ef ]
+"104
+{
+[; ;main.c: 103: void takeReading(void)
+[; ;main.c: 104: {
+[e :U _takeReading ]
+[f ]
+[; ;main.c: 106: globalInterruptDisable();
+"106
+[e ( _globalInterruptDisable ..  ]
+[; ;main.c: 108: RA4 = 0;
+"108
+[e = _RA4 -> -> 0 `i `b ]
+[; ;main.c: 109: TRISA4 = 0;
+"109
+[e = _TRISA4 -> -> 0 `i `b ]
+[; ;main.c: 110: RA4 = 1;
+"110
+[e = _RA4 -> -> 1 `i `b ]
+[; ;main.c: 113: for (int i=0; i<1; i++)
+"113
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 2 `i 588  ]
-[e $U 589  ]
-"101
-[e :U 588 ]
-[; ;main.c: 101: {
+[e $ < _i -> 1 `i 583  ]
+[e $U 584  ]
+"114
+[e :U 583 ]
+[; ;main.c: 114: {
 {
-"103
+"116
 }
-"100
+"113
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 2 `i 588  ]
-[e :U 589 ]
-"103
-}
-"104
-}
-[e :U 582 ]
-"85
-[e $U 583  ]
+[e $ < _i -> 1 `i 583  ]
 [e :U 584 ]
-[; ;main.c: 103: }
-[; ;main.c: 104: }
-[; ;main.c: 105: TMR1_StopTimer();
-"105
+"116
+}
+[; ;main.c: 116: }
+[; ;main.c: 117: RA4 = 0;
+"117
+[e = _RA4 -> -> 0 `i `b ]
+[; ;main.c: 118: TRISA4 = 1;
+"118
+[e = _TRISA4 -> -> 1 `i `b ]
+[; ;main.c: 119: resetTimer();
+"119
+[e ( _resetTimer ..  ]
+[; ;main.c: 120: PINGDriverStatus.takingReading = 1;
+"120
+[e = . _PINGDriverStatus 1 -> -> 1 `i `uc ]
+[; ;main.c: 122: }
+"122
+[e :UE 582 ]
+}
+"126
+[v _main `(v ~T0 @X0 1 ef ]
+"127
+{
+[; ;main.c: 126: void main(void)
+[; ;main.c: 127: {
+[e :U _main ]
+[f ]
+[; ;main.c: 129: initialize();
+"129
+[e ( _initialize ..  ]
+[; ;main.c: 131: resetTimer();
+"131
+[e ( _resetTimer ..  ]
+"132
+[v _val `i ~T0 @X0 1 a ]
+[; ;main.c: 132: int val = 0;
+[e = _val -> 0 `i ]
+[; ;main.c: 134: PINGDriverStatus.bufferEmpty = 1;
+"134
+[e = . _PINGDriverStatus 0 -> -> 1 `i `uc ]
+[; ;main.c: 135: PINGDriverStatus.takingReading = 0;
+"135
+[e = . _PINGDriverStatus 1 -> -> 0 `i `uc ]
+[; ;main.c: 137: summedTimerCount = 0x00000000;
+"137
+[e = _summedTimerCount -> -> -> 0 `i `l `ul ]
+"138
+[v _loopCount `i ~T0 @X0 1 a ]
+[; ;main.c: 138: int loopCount = 1<<1;
+[e = _loopCount << -> 1 `i -> 1 `i ]
+[; ;main.c: 140: minTimerCount = 0xFFFF;
+"140
+[e = _minTimerCount -> 65535 `ui ]
+[; ;main.c: 141: maxTimerCount = 0x0000;
+"141
+[e = _maxTimerCount -> -> 0 `i `ui ]
+[; ;main.c: 143: while(1)
+"143
+[e :U 588 ]
+[; ;main.c: 144: {
+"144
+{
+[; ;main.c: 145: if (PINGDriverStatus.bufferEmpty == 0)
+"145
+[e $ ! == -> . _PINGDriverStatus 0 `i -> 0 `i 590  ]
+[; ;main.c: 146: {
+"146
+{
+[; ;main.c: 147: continue;
+"147
+[e $U 587  ]
+"148
+}
+[e :U 590 ]
+[; ;main.c: 148: }
+[; ;main.c: 150: if (PINGDriverStatus.takingReading)
+"150
+[e $ ! != -> . _PINGDriverStatus 1 `i -> -> -> 0 `i `uc `i 591  ]
+[; ;main.c: 151: {
+"151
+{
+[; ;main.c: 153: continue;
+"153
+[e $U 587  ]
+"154
+}
+[e :U 591 ]
+[; ;main.c: 154: }
+[; ;main.c: 158: if (loopCount > 0)
+"158
+[e $ ! > _loopCount -> 0 `i 592  ]
+[; ;main.c: 159: {
+"159
+{
+[; ;main.c: 160: takeReading();
+"160
+[e ( _takeReading ..  ]
+[; ;main.c: 161: loopCount--;
+"161
+[e -- _loopCount -> 1 `i ]
+"162
+}
+[; ;main.c: 162: }
+[e $U 593  ]
+"163
+[e :U 592 ]
+[; ;main.c: 163: else
+[; ;main.c: 164: {
+"164
+{
+[; ;main.c: 167: summedTimerCount = summedTimerCount >> 1;
+"167
+[e = _summedTimerCount >> _summedTimerCount -> 1 `i ]
+"168
+[v _result `i ~T0 @X0 1 a ]
+[; ;main.c: 168: int result = storeWordForTransfer(summedTimerCount&0xFFFF);
+[e = _result ( _storeWordForTransfer (1 -> & _summedTimerCount -> -> 65535 `ui `ul `ui ]
+[; ;main.c: 170: summedTimerCount = 0x00000000;
+"170
+[e = _summedTimerCount -> -> -> 0 `i `l `ul ]
+[; ;main.c: 171: loopCount = 1<<1;
+"171
+[e = _loopCount << -> 1 `i -> 1 `i ]
+[; ;main.c: 172: minTimerCount = 0xFFFF;
+"172
+[e = _minTimerCount -> 65535 `ui ]
+[; ;main.c: 173: maxTimerCount = 0x0000;
+"173
+[e = _maxTimerCount -> -> 0 `i `ui ]
+"174
+}
+[e :U 593 ]
+"175
+}
+[e :U 587 ]
+"143
+[e $U 588  ]
+[e :U 589 ]
+[; ;main.c: 174: }
+[; ;main.c: 175: }
+[; ;main.c: 176: TMR1_StopTimer();
+"176
 [e ( _TMR1_StopTimer ..  ]
-[; ;main.c: 106: }
-"106
-[e :UE 581 ]
+[; ;main.c: 177: }
+"177
+[e :UE 586 ]
 }

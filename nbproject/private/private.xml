@@ -3,13 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Shane/Documents/Electronics/CreekDepthSensor/Microchip/System.h</file>
+            <file>file:/C:/Users/Shane/Documents/Electronics/CreekDepthSensor/Microchip/spi.h</file>
+            <file>file:/C:/Users/Shane/Documents/Electronics/CreekDepthSensor/Microchip/interrupts.h</file>
+            <file>file:/C:/Users/Shane/Documents/Electronics/CreekDepthSensor/Microchip/timers.c</file>
             <file>file:/C:/Users/Shane/Documents/Electronics/CreekDepthSensor/Microchip/PINGDriver.h</file>
-            <file>file:/C:/Users/Shane/Documents/Electronics/CreekDepthSensor/Microchip/mcc_generated_files/tmr1.c</file>
-            <file>file:/C:/Users/Shane/Documents/Electronics/CreekDepthSensor/Microchip/mcc_generated_files/i2c1.c</file>
+            <file>file:/C:/Users/Shane/Documents/Electronics/CreekDepthSensor/Microchip/interrupts.c</file>
             <file>file:/C:/Users/Shane/Documents/Electronics/CreekDepthSensor/Microchip/main.c</file>
-            <file>file:/C:/Users/Shane/Documents/Electronics/CreekDepthSensor/Microchip/mcc_generated_files/interrupt_manager.c</file>
-            <file>file:/C:/Users/Shane/Documents/Electronics/CreekDepthSensor/Microchip/mcc_generated_files/pin_manager.c</file>
-            <file>file:/C:/Users/Shane/Documents/Electronics/CreekDepthSensor/Microchip/mcc_generated_files/mcc.c</file>
+            <file>file:/C:/Users/Shane/Documents/Electronics/CreekDepthSensor/Microchip/timers.h</file>
+            <file>file:/C:/Users/Shane/Documents/Electronics/CreekDepthSensor/Microchip/spi.c</file>
         </group>
     </open-files>
 </project-private>
